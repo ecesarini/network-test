@@ -1,0 +1,11 @@
+network:
+  version: 2
+  ethernets:
+    enp0s9:
+      dhcp4: no
+      dhcp6: no
+      addresses:
+        - 192.168.20.10/24 #NODE_IP_RTR: connection is routed to the router VM
+      routes:
+        - to: default
+          via: 192.168.20.1
