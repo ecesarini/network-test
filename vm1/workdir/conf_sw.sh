@@ -1,8 +1,9 @@
+#!/bin/bash
 echo "Getting env variables"
-source var_cont.sh 
+source var_cont.sh
 source var_node.sh
 
-#------------- Communication with between VM --------------#
+#------------- Communication between VM --------------#
 echo "Setting the rout on the node to reach the net ns"
 ip route add $TO_BRIDGE_SUBNET via $TO_NODE_IP_SW dev enp0s8
 

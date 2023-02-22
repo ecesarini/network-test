@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Getting env variables"
-source var_cont.sh 
+source var_cont.sh
 source var_node.sh
 
 echo "Creating the namespaces"
@@ -34,7 +34,7 @@ ip link add br0 type bridge
     ip link show br0
     #ip link delete br0
 echo "Adding the network namespaces interfaces to the bridge"
-ip link set dev veth10 master br0
+ip link set dev veth10 master br0  #veth10 is enslaved by br0
 ip link set dev veth20 master br0
 echo "Assigning the IP address to the bridge"
 ip addr add $BRIDGE_IP/24 dev br0
@@ -50,6 +50,6 @@ ip netns exec $NS2 ip link set lo up
   ip netns exec $NS1 ip a
   ip netns exec $NS2 ip a
 
-echo "Setting the default route in the netowk namespaces"
+echo "Setting the default route in the network namespaces"
 ip netns exec $NS1 ip route add default via $BRIDGE_IP dev veth11
 ip netns exec $NS2 ip route add default via $BRIDGE_IP dev veth21

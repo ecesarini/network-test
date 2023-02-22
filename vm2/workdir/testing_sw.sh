@@ -15,7 +15,7 @@ ip netns exec $NS1 ping -c 3 172.16.1.3
 #Ping the other server (VM1)
 ip netns exec $NS1 ping -c 3 $TO_NODE_IP_SW
 
-#Ping the bridge on the other server
+#Ping the bridge on the other server (VM1)
 ip netns exec $NS1 ping -c 3 172.16.0.1
 
 #Ping the first container on VM1
