@@ -1,3 +1,4 @@
+# This is the network config written by 'subiquity'
 network:
   version: 2
   ethernets:
@@ -5,7 +6,7 @@ network:
       dhcp4: no
       dhcp6: no
       addresses:
-        - 192.168.20.10/24 #NODE_IP_RTR: connection is routed to the router VM
+        - 192.168.21.10/24 #NODE_IP_RTR: connection is routed to the router VM
       routes:
         - to: default
-          via: 192.168.20.1
+          via: 192.168.21.1

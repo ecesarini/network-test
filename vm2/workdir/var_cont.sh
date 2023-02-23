@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#Node VM IP var
+#NODE_IP_SW="192.168.100.11"
+#TO_NODE_IP_SW="192.168.100.10"
+#NODE_IP_RTR="192.168.100.11"
+#TO_NODE_IP_RTR="192.168.100.10"
+
 #Setup network var
 NS1="NS1"
 NS2="NS2"
