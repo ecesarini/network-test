@@ -10,15 +10,6 @@ ip route add $TO_BRIDGE_SUBNET via $TO_NODE_IP_SW dev enp0s8
 
 echo "Enables IP forwarding on the node (-w stands for write)"
 sysctl -w net.ipv4.ip_forward=1
-root@ubuntu-vm-01:~/test-k8s-net#
-root@ubuntu-vm-01:~/test-k8s-net#
-root@ubuntu-vm-01:~/test-k8s-net#
-root@ubuntu-vm-01:~/test-k8s-net#
-root@ubuntu-vm-01:~/test-k8s-net#
-root@ubuntu-vm-01:~/test-k8s-net#
-root@ubuntu-vm-01:~/test-k8s-net#
-root@ubuntu-vm-01:~/test-k8s-net#
-root@ubuntu-vm-01:~/test-k8s-net#
 root@ubuntu-vm-01:~/test-k8s-net# cat testing_rtr.sh
 #!/bin/bash
 source var_cont.sh
