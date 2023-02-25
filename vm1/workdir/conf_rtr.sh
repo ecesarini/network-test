@@ -1,22 +1,13 @@
 #!/bin/bash
+## Bash tunnel
+# source <(cat var*)
+# socat UDP:$TO_NODE_IP_RTR:9000,bind=$NODE_IP_RTR:9000 TUN:$TUNNEL_IP/16,tun-name=tundudp,iff-no-pi,tun-type=tun &
+
+
 echo "Getting env variables"
 source var_cont.sh 
 source var_node.sh
 
-#Communication with other VM
-echo "Setting the rout on the node to reach the net ns"
-ip route add $TO_BRIDGE_SUBNET via $TO_NODE_IP_RTR dev enp0s09
-
-#Prevent unsuccessful socat
-ps aux | grep socat | awk 'NR==1{print $2}' | xargs kill
-
-echo "Starts the UDP tunnel in the background"
-socat UDP:$TO_NODE_IP_RTR:9000,bind=$NODE_IP_RTR:9000 TUN:$TUNNEL_IP/16,tun-name=tundudp,iff-no-pi,tun-type=tun &
-
-#Wait few seconds for tundudp
-sleep 5
-
-#
 echo "Enabling tundudp"
 ip link set tundudp up
 
