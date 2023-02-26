@@ -7,5 +7,5 @@ network:
       addresses:
         - 192.168.21.10/24 #NODE_IP_RTR: connection is routed to the router VM
       routes:
-        - to: default
+        - to: 192.168.0.0/24 #Relegate enp0s9 route to private network. Otherwise (using default), you'll override NAT metric to internet
           via: 192.168.21.1
