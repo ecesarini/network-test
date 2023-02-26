@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Getting env variables"
 source var_cont.sh 
 source var_node.sh
